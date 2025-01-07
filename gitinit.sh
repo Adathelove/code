@@ -2,6 +2,7 @@
 # brew install hub
 # git config --global user.name "Ada Love"
 # git config --global user.email "adathelove@gmail.com"
+# https://github.com/settings/tokens
 # create a repo to host a new project on GitHub
 git init
 git add .
