@@ -43,7 +43,7 @@ else
 
   if [[ "$behind" -ne 0 ]]; then
     echo -e "\nShowing the git log for the $behind commit(s) behind:"
-    git log --oneline --graph --abbrev-commit -n "$behind"
+    git log --oneline --graph --abbrev-commit -n "$((behind + 1))"
     read -p "You are behind, would you like to pull changes from origin? (y/n): " pull_response
     if [[ "$pull_response" =~ ^[Yy]$ ]]; then
       git pull
@@ -52,7 +52,7 @@ else
 
   if [[ "$ahead" -ne 0 ]]; then
     echo -e "\nShowing the git log for the $ahead commit(s) ahead:"
-    git log --oneline --graph --abbrev-commit -n "$ahead"
+    git log --oneline --graph --abbrev-commit -n "$((ahead - 1))"
     read -p "You are ahead, would you like to push your changes to origin? (y/n): " push_response
     if [[ "$push_response" =~ ^[Yy]$ ]]; then
       git push
